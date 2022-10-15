@@ -1,6 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #produto{
+    display: inline-block;
     border: 3px solid black;
     border-radius: 15px;
-    margin: auto;
+    margin: 10px;
     padding: 5px;
+    width: auto;
+    background-color: white;
+    color: black;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.342);
 }
+#produto h1{
+    font-size: 1.6em;
+}
+#produto h2{
+    color: white(165, 19, 19);
+}
+#produto span{
+    color: black;
+}
+
+#Store{
+    display: flexbox;
+    width: auto;
+    max-width: 1430px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: white;
+}
+

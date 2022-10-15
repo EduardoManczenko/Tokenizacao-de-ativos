@@ -114,7 +114,7 @@ async function generateProductStruct(contracts = products){
     console.log(contracts[0])
     let strmessage = ""
     for(let i = 0; i < count; i++){
-        strmessage += `<br><div id="produto"> <h1>Contrato: <span id="contract${i}">${contracts[i]}</span></h1>
+        strmessage += `<div id="produto"> <h1>Contrato: <span id="contract${i}">${contracts[i].toLowerCase()}</span></h1>
         <h2>Simbolo: <span id="tokenSymbol">${await tkSymbol(contracts[i])}</span></h2>
         <h2>Nome: <span id="tokenName">${await tkName(contracts[i])}</span></h2>
         <h2>Supply: <span id="totalSupply">${await tkTotalSupply(contracts[i])}</span></h2>
@@ -123,7 +123,7 @@ async function generateProductStruct(contracts = products){
         <h2>Saldo ${await tkSymbol(contracts[i])}: <span id="userBalance">${await getUserTkBalance(contracts[i])}</span></h2>
         <h2>Comprar ativos <br> Quantidade: <input type="text" id="amount${i}">  <button onclick="enviarUsdt('${contracts[i]}', ${i}, ${await tkPrice(contracts[i])})">Enviar</button></h2>
         
-        </div><br>
+        </div>
         `
     }
     console.log(strmessage, "AQUIIIIIIIIIIIIIII")
