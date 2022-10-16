@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Login com a metamask</h1>
-    <button onclick="login()">Login metamask</button>
-    <h2>Carteira: <span id="carteira"></span></h2>
-    <h2>USDT: <span id="balanceUsdt"></span></h2>
-
+    <div id="btnLogin" onclick="login()">Login</div>
+    <br>
+    <div id="userInfos">
+        <h2>Carteira: <span id="carteira"></span></h2>
+        <h2>USDT: <span id="balanceUsdt"></span></h2>
+        <h2>Tokens: <span>
+            <ul>
+                <li>01</li>
+                <li>02</li>
+                <li>03</li>
+            </ul>
+        </span></h2>
+    </div>
     
+    <br><br><br>
     <div id="Store">
-        
+        <h1 id="title">Produtos disponiveis</h1>
     </div>
 
 

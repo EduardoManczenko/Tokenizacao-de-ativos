@@ -3,6 +3,44 @@
     padding: 0;
 }
 
+#btnLogin{
+    font-size: 2em;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 150px;
+    
+    text-align: center;
+    margin: 10px;
+}
+#btnLogin:hover{
+    box-shadow: 1px 1px 10px black;
+    cursor: pointer;
+}
+
+
+#userInfos{
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+}
+
+#userInfos h2{
+    margin: 10px;
+}
+
+#userInfos ul{
+    margin-left: 35px;
+    
+}
+
+
+#title{
+    text-align: center;
+}
+
+
 #produto{
     display: inline-block;
     border: 3px solid black;
@@ -16,9 +54,19 @@
 }
 #produto h1{
     font-size: 1.6em;
+    margin-bottom: 7px;
+    color: red;
+    
 }
+#produto h1 span{
+    text-decoration: underline;
+}
+
+
 #produto h2{
     color: white(165, 19, 19);
+    margin-bottom: 5px;
+    color: blue;
 }
 #produto span{
     color: black;

@@ -1,5 +1,7 @@
 
 
+
+
 let userAddress
 
 //elements/spans
@@ -11,16 +13,12 @@ let store = document.getElementById('Store')
 
 
 
-
-
 //contracts
 const bank = "0xCf1B9A7cceaD435E90eBb7a905b3332e32A5507d"
 const usdtContract = "0xfc90B78e4158F0fF53e519c41dED2dd30aC5B674"
-const AUC01Contract = "0xFA033f5b5eB9F882A68f0ed836e4f72783f35269"
-const AUC02Contract = "0xf0E9a6fB5da7da078b181C86Ee94a2fECD55FFAc"
-const AUC03Contract = "0xe70911e5a512FD93A03E0B6e3c73F7E911a0F244"
+const carFactory = "0x25C2F68360aD0299c5FcaD6EA8E3Dff6a93B891d"
 
-let products = [AUC01Contract, AUC02Contract, AUC03Contract]
+let products = []
 
 //functions
 const balanceOf = "function balanceOf(address) view returns (uint)"
@@ -32,6 +30,8 @@ const symbol = "function symbol() public view virtual override returns (string m
 const totalSupply = "function totalSupply() public view virtual override returns (uint256)"
 const tokenPrice = "function tokenPrice() external view returns(uint)"
 
+//car factory functions
+const returnCars = "function returnCarsArray()external view returns(address[] memory)"
 
 
 
@@ -42,6 +42,7 @@ async function login(){
     userAddress = accounts[0]
     userWalletSpan.innerHTML = userAddress
     await getUsdtBalance()
+    await getCars()
     await getStore()
 }
 
@@ -53,6 +54,13 @@ function getProvider(){
     }
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     return provider
+}
+
+async function getCars(){
+    const provider = getProvider()
+    const contract = new ethers.Contract(carFactory, [returnCars], provider)
+    products = await contract.returnCarsArray()
+    console.log(products, "Array de Produtos")
 }
 
 async function getUsdtBalance(){
@@ -121,7 +129,7 @@ async function generateProductStruct(contracts = products){
         <h2>Total disponivel a venda: <span id="totalForSale">${await getProductStock(contracts[i])}</span></h2>
         <h2>Preço por token: <span id="tokenPrice">${await tkPrice(contracts[i])}</span></h2>
         <h2>Saldo ${await tkSymbol(contracts[i])}: <span id="userBalance">${await getUserTkBalance(contracts[i])}</span></h2>
-        <h2>Comprar ativos <br> Quantidade: <input type="text" id="amount${i}">  <button onclick="enviarUsdt('${contracts[i]}', ${i}, ${await tkPrice(contracts[i])})">Enviar</button></h2>
+        <h2>Comprar ativos: <br> Quantidade: <input type="text" id="amount${i}">  <button onclick="enviarUsdt('${contracts[i]}', ${i}, ${await tkPrice(contracts[i])})">Enviar</button></h2>
         
         </div>
         `
