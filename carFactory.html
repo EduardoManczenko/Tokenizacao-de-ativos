@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCarFactory.css">
+    <title>Document</title>
+    <style>
+        a{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html"><button>Voltar</button></a>
+    <div id="btnLogin" onclick="login()">Login</div>
+    <h2>Carteira: <span id="carteira"></span></h2>
+    <div>
+        <h1>Mint de Produtos</h1>
+        <h2>Nome: <input id="newNome" type="text"></h2>
+        <h2>Simbolo: <input id="newSymbol" type="text"></h2>
+        <h2>Imagem: <input id="newImg" type="text"></h2>
+        <h2>Preço por Token (USD): <input id="newPrice" type="text"></h2>
+        <h2>Total Supply: <input id="newSupply" type="text"></h2>
+        <button id="submit" onclick="mintCar()">Submit</button>
+    </div>
+
+    <script src="ScriptsJS/carFactory.js"></script>
+    <script src="ScriptsJS/variaveis.js"></script>
+    <script src="ScriptsJS/Client.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+            type="application/javascript"></script>
+</body>
+</html>

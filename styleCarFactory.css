@@ -1,0 +1,39 @@
+div{
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+    margin: 35px;
+}
+h1{
+    text-align: center;
+    margin: 15px;
+    margin-bottom: 20px;
+}
+div h2{
+    text-align: right;
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+input{
+    width: 400px;
+    height: 20px;
+}
+#submit{
+    margin-left: 600px;
+}
+#btnLogin{
+    font-size: 2em;
+    display: block;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    margin: 10px;
+}
+#btnLogin:hover{
+    box-shadow: 1px 1px 10px black;
+    cursor: pointer;
+}

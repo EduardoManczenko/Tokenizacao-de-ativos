@@ -17,6 +17,7 @@ async function getCars(){
     const contract = new ethers.Contract(carFactory, [returnCars], provider)
     products = await contract.returnCarsArray()
     console.log(products, "Array de Produtos")
+    return products
 }
 
 async function getStore(){

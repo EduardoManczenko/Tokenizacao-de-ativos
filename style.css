@@ -3,11 +3,27 @@
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+}
+button{
+    display: block;
+    margin-left: 10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+button:hover{
+    box-shadow: 1px 1px 10px black;
+    cursor: pointer;
+    
+}
 #btnLogin{
     font-size: 2em;
     display: inline-block;
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 150px;
     
     text-align: center;
@@ -38,6 +54,7 @@
     margin-left: 10px;
     padding: 5px;
     background-color: white;
+    border-radius: 10px;
 }
 #userInfos button:hover{
     box-shadow: 2px 2px 15px black;

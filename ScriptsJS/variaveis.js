@@ -31,3 +31,5 @@ const tokenImage = "function tokenImage() external view returns(string memory)"
 
 //car factory functions
 const returnCars = "function returnCarsArray()external view returns(address[] memory)"
+
+const createCar = "function create(string memory _name, string memory _symbol,uint _tokenPrice, uint _supply, string memory _imagem) public"

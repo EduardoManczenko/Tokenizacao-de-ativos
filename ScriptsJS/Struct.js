@@ -12,13 +12,13 @@ async function generateProductStruct(contracts = products){
             <h2>Nome: <span id="tokenName">${await tkName(contracts[i])}</span></h2>
             <h2>Supply: <span id="totalSupply">${await tkTotalSupply(contracts[i])}</span></h2>
             <h2>Total disponivel a venda: <span id="totalForSale">${await getProductStock(contracts[i])}</span></h2>
-            <h2>Preço por token: <span id="tokenPrice">${await tkPrice(contracts[i])}</span></h2>
+            <h2>Preço por token (USD): <span id="tokenPrice">${await tkPrice(contracts[i])}</span></h2>
             <h2>Saldo ${await tkSymbol(contracts[i])}: <span id="userBalance">${await getUserTkBalance(contracts[i])}</span></h2>
             <h2>Comprar ativos: <br> Quantidade: <input type="text" id="amount${i}">  <button onclick="enviarUsdt('${contracts[i]}', ${i}, ${await tkPrice(contracts[i])})">Enviar</button></h2>
         </div>
         `
     }
-    console.log(strmessage, "AQUIIIIIIIIIIIIIII")
+    console.log(strmessage)
     return strmessage
 }
 

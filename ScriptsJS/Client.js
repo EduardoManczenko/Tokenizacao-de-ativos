@@ -2,10 +2,17 @@ async function login(){
     let accounts = await ethereum.request({method: 'eth_requestAccounts'})
     userAddress = accounts[0]
     userWalletSpan.innerHTML = userAddress
-    await getUsdtBalance()
-    await getCars()
-    await getTokensBalance()
-    await getStore()
+    try{
+        await getUsdtBalance()
+        await getCars()
+        await getTokensBalance()
+        await getStore()
+    }catch{
+
+    }
+    
+    
+   
 }
 
 function getProvider(){
