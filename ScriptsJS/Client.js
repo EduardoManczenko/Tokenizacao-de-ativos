@@ -51,6 +51,7 @@ async function enviarUsdt(address, count, price){
     const amount = document.getElementById("amount" + count)
     console.log(amount.value, "aquiiiiiiiiiii")
     console.log(userAddress)
+    console.log(address)
     const tx = await contractSigner.swap(ethers.utils.parseEther(amount.value), userAddress)
 
     console.log(tx)

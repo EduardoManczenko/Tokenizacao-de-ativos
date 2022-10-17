@@ -11,8 +11,8 @@ let tokenBalance = document.getElementById('tokenBalance')
 
 //contracts
 const bank = "0xCf1B9A7cceaD435E90eBb7a905b3332e32A5507d"
-const usdtContract = "0xfc90B78e4158F0fF53e519c41dED2dd30aC5B674"
-const carFactory = "0x8CF0B561Bc67aA22D9A26A6cbb4F5e52F3d72a3E"
+const usdtContract = "0x81adB880B8c97168aB3B50f97F45a879b05e78C7"
+const carFactory = "0x77D5Efd87026921C2Ef808f5AD904ea6bC7338bf"
 
 let products = []
 

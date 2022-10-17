@@ -1,3 +1,10 @@
+
+async function getAllBalances(){
+    await getUsdtBalance()
+    await getTokensBalance()
+}
+
+
 async function getUsdtBalance(){
     const provider = getProvider()
     const contract = new ethers.Contract(usdtContract, [balanceOf], provider)

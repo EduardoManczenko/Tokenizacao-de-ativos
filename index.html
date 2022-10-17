@@ -10,15 +10,18 @@
 <body>
     <div id="btnLogin" onclick="login()">Login</div>
     <br>
+    
     <div id="userInfos">
         <h2>Carteira: <span id="carteira"></span></h2>
-        <h2>USDT: <span id="balanceUsdt"></span></h2>
+        <button onclick="getAllBalances()">Atualizar</button>
+        <h2>USDT: <span id="balanceUsdt"></span></h2>  
         <h2>Tokens: <span>
             <ul id="tokenBalance">
                 
             </ul>
         </span></h2>
     </div>
+
   
     <br><br><br>
     <div id="Store">
