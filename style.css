@@ -46,12 +46,28 @@
     border: 3px solid black;
     border-radius: 15px;
     margin: 10px;
+    margin-left: 25px;
     padding: 5px;
     width: auto;
+    max-width: 650px;
+    min-width: 650px;
+    min-height: 650px;
     background-color: white;
     color: black;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.342);
 }
+
+#produto img{
+    display: table;
+    border: 3px solid gray;
+    border-radius: 10px;
+    max-width: 600px;
+    max-height: 600px;
+    box-shadow: 1px 1px 5px black;
+    margin: 20px;
+    
+}
+
 #produto h1{
     font-size: 1.6em;
     margin-bottom: 7px;
