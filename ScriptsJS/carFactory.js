@@ -1,4 +1,3 @@
-
 let newNome = document.getElementById('newNome')
 let newSymbol = document.getElementById('newSymbol')
 let newImg = document.getElementById('newImg')
@@ -25,6 +24,7 @@ async function mintCar(){
     console.log(create.log)
 
     console.log(receip)
+
     let add = ''
     
     await Promise.all([receip]).then(res => add = res[0].logs[0].address)
