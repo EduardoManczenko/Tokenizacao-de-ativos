@@ -145,3 +145,17 @@ button:hover{
     background-color: white;
 }
 
+#h2fees{
+    display: inline;
+}
+
+#fees{
+    display: inline-block;
+    position: relative;
+    bottom: 30px;
+    left: 300px;
+}
+
+#submit{
+    display: inline-block;
+}
