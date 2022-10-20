@@ -32,20 +32,20 @@ async function getTokensBalance(){
     let isOwner = []
     console.log(products.length)
     for(i = 0; i < products.length; i++){
-        let contract = new ethers.Contract(products[i], [balanceOf, name], provider)
+        let contract = new ethers.Contract(products[i], [balanceOf, symbol], provider)
         
         let balance = ethers.utils.formatEther(await contract.balanceOf(userAddress))
         if(balance > 0){
-            let name = await contract.name()
+            let tksym = await contract.symbol()
             
             let bank = await tkBank(products[i])
-            
+
             if( bank.toLowerCase() == userAddress.toLowerCase()){
                 isOwner.push(true)
             }else{
                 isOwner.push(false)
             }
-            arrName.push(name)
+            arrName.push(tksym)
             arrBalance.push(balance)
         }
         
