@@ -6,7 +6,7 @@ let balanceUsdt = document.getElementById('balanceUsdt')
 let amount = document.getElementById('amount')
 let store = document.getElementById('Store')
 let tokenBalance = document.getElementById('tokenBalance')
-
+let tokenToSale = document.getElementById('tokenToSale')
 
 
 //contracts

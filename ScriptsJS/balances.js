@@ -29,6 +29,7 @@ async function getTokensBalance(){
     const provider = getProvider()
     let arrBalance = []
     let arrName = []
+    let isOwner = []
     console.log(products.length)
     for(i = 0; i < products.length; i++){
         let contract = new ethers.Contract(products[i], [balanceOf, name], provider)
@@ -36,6 +37,14 @@ async function getTokensBalance(){
         let balance = ethers.utils.formatEther(await contract.balanceOf(userAddress))
         if(balance > 0){
             let name = await contract.name()
+            console.log(userAddress.toLowerCase())
+            console.log(await tkBank(products[i]), " AqQUIIII")
+            let bank = await tkBank(products[i])
+            if( bank.toLowerCase() == userAddress.toLowerCase()){
+                isOwner.push(true)
+            }else{
+                isOwner.push(false)
+            }
             arrName.push(name)
             arrBalance.push(balance)
         }
@@ -43,7 +52,7 @@ async function getTokensBalance(){
     }
     console.log(arrBalance, arrName, "<<<<<<")
 
-    await generateTokenBalance(arrBalance, arrName)
+    await generateTokenBalance(arrBalance, arrName, isOwner)
 }
 
 

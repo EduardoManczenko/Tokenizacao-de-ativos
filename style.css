@@ -8,12 +8,12 @@
 }
 
 ::-webkit-scrollbar-track{
-    background: rgb(185, 185, 157);
+    background: white;
     border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb{
-    background: black;
+    background: blue;
     border-radius: 50px;
 }
 

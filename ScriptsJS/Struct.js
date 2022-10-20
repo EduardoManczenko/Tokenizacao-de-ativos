@@ -23,10 +23,18 @@ async function generateProductStruct(contracts = products){
     return strmessage
 }
 
-async function generateTokenBalance(arrBalance, tkName){
-    let strmessage = ""
+async function generateTokenBalance(arrBalance, tkName, isOwner){
+    let balance = ""
+    let userTokenSale = ""
+    console.log(isOwner, "AQUIIIIIIIIIII")
     for(i = 0; i < arrBalance.length; i++){
-        strmessage +=`<li>${tkName[i]} : ${arrBalance[i]}</li>`
+        if(isOwner[i] == false){
+            balance +=`<li>${tkName[i]} : ${arrBalance[i]}</li>`
+        }else{
+            userTokenSale += `<li>${tkName[i]} : ${arrBalance[i]}</li>`
+        }
+        
     }
-    tokenBalance.innerHTML = strmessage
+    tokenToSale.innerHTML = userTokenSale
+    tokenBalance.innerHTML = balance
 }
