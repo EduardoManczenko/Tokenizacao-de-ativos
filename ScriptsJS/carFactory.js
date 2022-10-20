@@ -7,7 +7,7 @@ let newSupply = document.getElementById('newSupply')
 async function mintCar(){
     const provider = getProvider()
     const signer = provider.getSigner()
-    const contract = new ethers.Contract(carFactory, [createCar,returnLastCar], provider)
+    const contract = new ethers.Contract(carFactory, [createCar], provider)
     const contractSigner = contract.connect(signer)
     const create = await contractSigner.create(newNome.value, newSymbol.value, newPrice.value, newSupply.value, newImg.value)
     
@@ -24,11 +24,9 @@ async function mintCar(){
     console.log(create.log)
 
     console.log(receip)
-
-    let add = ''
     
+    let add = ''
     await Promise.all([receip]).then(res => add = res[0].logs[0].address)
-
     console.log(add, "aqyuu")
     await permToBank(add)
 }

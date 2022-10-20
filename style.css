@@ -3,6 +3,21 @@
     padding: 0;
 }
 
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(185, 185, 157);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 50px;
+}
+
+
 a{
     text-decoration: none;
 }
@@ -71,12 +86,12 @@ button:hover{
     display: inline-block;
     border: 3px solid black;
     border-radius: 15px;
-    margin: 10px;
-    margin-left: 25px;
+    margin: 5px;
+    margin-left: 5px;
     padding: 5px;
     width: auto;
-    max-width: 650px;
-    min-width: 650px;
+    max-width: 687px;
+    min-width: 687px;
     min-height: 650px;
     background-color: white;
     color: black;
@@ -112,6 +127,9 @@ button:hover{
 }
 #produto span{
     color: black;
+}
+#produto button{
+    display: inline;
 }
 
 #Store{

@@ -1,9 +1,31 @@
-async function getProductStock(address){
+
+async function getProductStock(address, bankAddress){
     const provider = getProvider()
     const contract = new ethers.Contract(address, [balanceOf], provider)
-    const balance = await contract.balanceOf(bank)
+    const balance = await contract.balanceOf(bankAddress)
     return ethers.utils.formatUnits(balance.toString(), 18)
 }
+
+//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
+//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
+//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
+
+//TODO, funçao para retornar o owner do contrato, e enchaixar o owner pra retornar o total disponivel a venda diferente do bank 0xcf1b voce entendeu eduardo
+
+async function tkBank(address){
+    const provider = getProvider()
+    const contract = new ethers.Contract(address, [tokenBank], provider)
+    const tkBankAddress = await contract.tokenBank()
+    return tkBankAddress
+}
+
+
+
+//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
+//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
+//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
+
+
 
 async function getUserTkBalance(address){
     const provider = getProvider()

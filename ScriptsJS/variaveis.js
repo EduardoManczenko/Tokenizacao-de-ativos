@@ -10,9 +10,9 @@ let tokenBalance = document.getElementById('tokenBalance')
 
 
 //contracts
-const bank = "0xCf1B9A7cceaD435E90eBb7a905b3332e32A5507d"
+//const bank = "0xCf1B9A7cceaD435E90eBb7a905b3332e32A5507d"
 const usdtContract = "0x81adB880B8c97168aB3B50f97F45a879b05e78C7"
-const carFactory = "0xdeC45d387E555569D01bF3463D0219dDE3afF06d"
+const carFactory = "0x056B3E71d530e96e1d2a1031051735DfBfc25d97"
 
 let products = []
 
@@ -28,10 +28,12 @@ const tokenPrice = "function tokenPrice() external view returns(uint)"
 
 const tokenImage = "function tokenImage() external view returns(string memory)"
 
+const tokenBank = "function tokenBank() external view returns(address)"
+
+
 
 //car factory functions
 const returnCars = "function returnCarsArray()external view returns(address[] memory)"
 
-const createCar = "function create(string memory _name, string memory _symbol,uint _tokenPrice, uint _supply, string memory _imagem) public returns(address)"
+const createCar = "function create(string memory _name, string memory _symbol,uint _tokenPrice, uint _supply, string memory _imagem) public"
 
-const returnLastCar = "function returnLastCreate() public view returns(address)"
