@@ -22,12 +22,16 @@ a{
     text-decoration: none;
 }
 button{
-    display: block;
+    display: inline-block;
     margin-left: 10px;
+    margin-right: 10px;
     padding: 5px;
     background-color: white;
     border-radius: 10px;
     text-decoration: none;
+}
+#btnCarfactory{
+    display: block;
 }
 button:hover{
     box-shadow: 1px 1px 10px black;
