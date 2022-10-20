@@ -6,11 +6,6 @@ async function getProductStock(address, bankAddress){
     return ethers.utils.formatUnits(balance.toString(), 18)
 }
 
-//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
-//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
-//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
-
-//TODO, funçao para retornar o owner do contrato, e enchaixar o owner pra retornar o total disponivel a venda diferente do bank 0xcf1b voce entendeu eduardo
 
 async function tkBank(address){
     const provider = getProvider()
@@ -18,12 +13,6 @@ async function tkBank(address){
     const tkBankAddress = await contract.tokenBank()
     return tkBankAddress
 }
-
-
-
-//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
-//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
-//!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!!@#$!@#@#@#!@!@!
 
 
 
