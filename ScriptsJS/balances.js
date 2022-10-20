@@ -37,9 +37,9 @@ async function getTokensBalance(){
         let balance = ethers.utils.formatEther(await contract.balanceOf(userAddress))
         if(balance > 0){
             let name = await contract.name()
-            console.log(userAddress.toLowerCase())
-            console.log(await tkBank(products[i]), " AqQUIIII")
+            
             let bank = await tkBank(products[i])
+            
             if( bank.toLowerCase() == userAddress.toLowerCase()){
                 isOwner.push(true)
             }else{
