@@ -11,8 +11,8 @@ let tokenToSale = document.getElementById('tokenToSale')
 
 //contracts
 //const bank = "0xCf1B9A7cceaD435E90eBb7a905b3332e32A5507d"
-const usdtContract = "0x81adB880B8c97168aB3B50f97F45a879b05e78C7"
-const carFactory = "0x056B3E71d530e96e1d2a1031051735DfBfc25d97"
+const usdtContract = "0xFc2AcC124Bd321615487265F1115C7c16a8F8d4A"
+const carFactory = "0xdEc133BCd444f4E2b229e1118191f205A7cfD954"
 
 let products = []
 
