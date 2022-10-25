@@ -129,6 +129,9 @@ button:hover{
     margin-bottom: 5px;
     color: blue;
 }
+#produto h3{
+    color: red;
+}
 #produto span{
     color: black;
 }

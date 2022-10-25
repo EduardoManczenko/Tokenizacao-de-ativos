@@ -16,6 +16,7 @@ async function generateProductStruct(contracts = products){
             <h2>Preço por token (USD): <span id="tokenPrice">${await tkPrice(contracts[i])}</span></h2>
             <h2>Saldo ${await tkSymbol(contracts[i])}: <span id="userBalance">${await getUserTkBalance(contracts[i])}</span></h2>
             <h2>Comprar ativos: <br> Quantidade: <input type="text" id="amount${i}">  <button onclick="enviarUsdt('${contracts[i]}', ${i}, ${await tkPrice(contracts[i])})">Enviar</button></h2>
+            <h3 id="tax${i}"></h3>
         </div>
         `
     }

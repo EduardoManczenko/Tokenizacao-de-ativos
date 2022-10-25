@@ -37,6 +37,7 @@ async function permissaoUsdt(address, count, price){
     console.log(amount)
     const tx = await contractSigner.increaseAllowance(address, ethers.utils.parseUnits((amount.value * price).toString()))
     console.log(tx)
+    
     while(true){
         const rtx = await contractSigner.allowance(userAddress, address)
         console.log("Processando")
@@ -49,8 +50,9 @@ async function permissaoUsdt(address, count, price){
 }
 
 async function enviarUsdt(address, count, price){
+    const tax = document.getElementById(`tax${count}`)
+    tax.innerHTML = "Aguarde 1 de 2 transaçoes..."
     await permissaoUsdt(address, count, price)
-
     const provider = getProvider()
     const signer = provider.getSigner()
     const contract = new ethers.Contract(address, [swap], provider)
@@ -59,7 +61,10 @@ async function enviarUsdt(address, count, price){
     console.log(amount.value, "aquiiiiiiiiiii")
     console.log(userAddress)
     console.log(address)
+    tax.innerHTML = "Aguarde 2 de 2 transaçoes..."
     const tx = await contractSigner.swap(ethers.utils.parseEther(amount.value), userAddress)
+    await tx.wait(1)
+    tax.innerHTML = "Concluido!"
 
     console.log(tx)
 }
