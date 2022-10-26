@@ -38,6 +38,8 @@ async function permissaoUsdt(address, count, price){
     const tx = await contractSigner.increaseAllowance(address, ethers.utils.parseUnits((amount.value * price).toString()))
     console.log(tx)
     
+
+
     while(true){
         const rtx = await contractSigner.allowance(userAddress, address)
         console.log("Processando")
