@@ -39,7 +39,6 @@ async function permissaoUsdt(address, count, price){
     console.log(tx)
     
 
-
     while(true){
         const rtx = await contractSigner.allowance(userAddress, address)
         console.log("Processando")
@@ -48,6 +47,7 @@ async function permissaoUsdt(address, count, price){
             break
         }
     }
+
     return tx
 }
 
