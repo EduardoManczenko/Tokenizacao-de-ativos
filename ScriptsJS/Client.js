@@ -29,7 +29,9 @@ function getProvider(){
 async function permissaoUsdt(address, count, price){
     const provider = getProvider()
     const signer = provider.getSigner()
+    
     const contract = new ethers.Contract(usdtContract, [increaseAllowance, allowance], provider)
+    
     contractSigner = contract.connect(signer)
     console.log(address, "AQUIIIII")
     
@@ -38,33 +40,26 @@ async function permissaoUsdt(address, count, price){
     const tx = await contractSigner.increaseAllowance(address, ethers.utils.parseUnits((amount.value * price).toString()))
     console.log(tx)
     
-
-    while(true){
-        const rtx = await contractSigner.allowance(userAddress, address)
-        console.log("Processando")
-        if(rtx["_hex"] != "0x00"){
-            console.log("PERMISSÃO EM USDT APROVADA!!!")
-            break
-        }
-    }
-
+    await tx.wait(1)
+    
     return tx
 }
 
 async function enviarUsdt(address, count, price){
     const tax = document.getElementById(`tax${count}`)
     tax.innerHTML = "Aguarde 1 de 2 transaçoes..."
+
     await permissaoUsdt(address, count, price)
+
     const provider = getProvider()
     const signer = provider.getSigner()
     const contract = new ethers.Contract(address, [swap], provider)
     const contractSigner = contract.connect(signer)
     const amount = document.getElementById("amount" + count)
-    console.log(amount.value, "aquiiiiiiiiiii")
-    console.log(userAddress)
-    console.log(address)
     tax.innerHTML = "Aguarde 2 de 2 transaçoes..."
+
     const tx = await contractSigner.swap(ethers.utils.parseEther(amount.value), userAddress)
+
     await tx.wait(1)
     tax.innerHTML = "Concluido!"
 
